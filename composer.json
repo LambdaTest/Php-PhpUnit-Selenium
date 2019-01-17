@@ -1,0 +1,12 @@
+{
+  "require": {
+    "phpunit/phpunit-selenium": "*",
+    "facebook/webdriver": "dev-master"
+  },
+  "scripts": {   
+    "test": "vendor\\bin\\phpunit tests\\LambdaTest.php"    
+  },
+  "autoload": {
+    "classmap": ["lib/"]
+  }
+}
