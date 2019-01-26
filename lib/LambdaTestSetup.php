@@ -12,7 +12,17 @@ class LambdaTestSetup extends PHPUnit\Framework\TestCase
     {        
         
 		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_APPKEY'] ."@hub.lambdatest.com/wd/hub";
-		$task_id = 0;     
+		$task_id = 0; 
+                $CONFIG = $GLOBALS['CONFIG'];
+
+                foreach ($CONFIG["capabilities"] as $key => $value) {
+                 if(!array_key_exists($key, $caps))
+			{
+		          $caps[$key] = $value;
+			  print($caps[$key]);
+			  print($value);
+			}
+               }    
 
 		$desired_capabilities = new DesiredCapabilities();
 		$desired_capabilities->setCapability('browserName',$GLOBALS['LT_BROWSER']);
@@ -23,7 +33,7 @@ class LambdaTestSetup extends PHPUnit\Framework\TestCase
 		$desired_capabilities->setCapability('network', true);
 		$desired_capabilities->setCapability('visual', true);		
 		
-		self::$driver = RemoteWebDriver::create($url, $desired_capabilities); 		
+		self::$driver = RemoteWebDriver::create($url, $caps); 		
 		
     }
 	

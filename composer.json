@@ -4,7 +4,8 @@
     "facebook/webdriver": "dev-master"
   },
   "scripts": {   
-    "test": "vendor\\bin\\phpunit tests\\LambdaTest.php"    
+    "single": "vendor\\bin\\phpunit tests\\LambdaTest.php", 
+    "parallel": "vendor\\bin\\phpunit tests\\LambdaTestParallel.php"
   },
   "autoload": {
     "classmap": ["lib/"]

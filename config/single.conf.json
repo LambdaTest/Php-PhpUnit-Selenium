@@ -1,13 +1,11 @@
 {
   "capabilities": {
     "build": "LambdaTestSampleApp",
-    "name": "PHPUnitTestSample"
-  },
-
-  "environments": {
-    "browserName": "chrome",
-    "version": "69.0",
-    "platform": "WIN7"
-  }
+    "name": "PHPUnitTestSample",
+   "browserName": "chrome",
+    "version": "54.0",
+    "platform": "WIN10"
 }
+}
+
 

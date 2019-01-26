@@ -16,4 +16,6 @@ $ php -r "unlink('composer-setup.php');"
 
 # Execution:
 
-* To run a test, run ``` composer test ```
+* To run a single test, run ``` composer single ```
+* To run a parallel test,  run ``` composer parallel ```
+
