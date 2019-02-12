@@ -4,8 +4,7 @@ require 'vendor/autoload.php';
 require 'lib/globals.php';
 
 
-class LambdaTestSetup extends PHPUnit\Framework\TestCase
-{
+class LambdaTestSetup extends PHPUnit\Framework\TestCase{
     protected static $driver;
 
     public static function setUpBeforeClass()

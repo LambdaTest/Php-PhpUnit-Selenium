@@ -8,10 +8,10 @@ if(!$config_file) $config_file = 'config/parallel.conf.json';
 $GLOBALS['PAR_CONFIG'] = json_decode(file_get_contents($config_file), true);
 
 $GLOBALS['LT_USERNAME'] = getenv('LT_USERNAME');
-if(!$GLOBALS['LT_USERNAME']) $GLOBALS['LT_USERNAME'] = "YOUR USERNAME";
+if(!$GLOBALS['LT_USERNAME']) $GLOBALS['LT_USERNAME'] = "qalambdatest";
 
 $GLOBALS['LT_APPKEY'] = getenv('LT_APPKEY');
-if(!$GLOBALS['LT_APPKEY']) $GLOBALS['LT_APPKEY'] = "YOUR APP KEY";
+if(!$GLOBALS['LT_APPKEY']) $GLOBALS['LT_APPKEY'] = "vz1efec4XUkJ0rtQrvXE6gLNa15N0K1D1wgnS2c0pJ5xt3E0vd";
 
 $GLOBALS['LT_BROWSER'] = getenv('LT_BROWSER');
 if(!$GLOBALS['LT_BROWSER']) $GLOBALS['LT_BROWSER'] = $GLOBALS['CONFIG']['capabilities']["browserName"];
