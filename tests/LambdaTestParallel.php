@@ -74,7 +74,6 @@ public function setupLambdatest($bName, $VName, $osName)
 		catch(Exception $e){
 		echo "ErrorIN ".$e->getTraceAsString();
 		echo "Message: " .$e->getMessage();
-		echo "Error Message: ".$e->errorMessage();
 		self::$driver->executeScript("lambda-status=failed");
 		}
 	}
