@@ -1,4 +1,4 @@
-# Php-PhpUnit-Selenium
+# Php PhpUnit Selenium Using LambdaTest
 ![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
 ---
 
