@@ -1,7 +1,11 @@
 <?php 
 
-require'vendor/autoload.php';
 require 'lib/globals.php';
+require_once('vendor/autoload.php');
+
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Facebook\WebDriver\WebDriverBy;
+use PHPUnit\Framework\Assert;
 
 class LambdaTestParallel extends PHPUnit\Framework\TestCase {
 
@@ -10,33 +14,27 @@ public static $status='failed';
 
 public function setupLambdatest($bName, $VName, $osName)
         {        
-		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_APPKEY'] ."@hub.lambdatest.com/wd/hub";
-		$task_id = 0; 
-                $CONFIG = $GLOBALS['CONFIG'];
-		$desired_capabilities = new DesiredCapabilities();
-		$desired_capabilities->setCapability('browserName',$bName);
-		$desired_capabilities->setCapability('version', $VName);
-		$desired_capabilities->setCapability('platform', $osName);
-		$desired_capabilities->setCapability('name', "PHPUnitParallelTestSample");
-		$desired_capabilities->setCapability('build', "ParallelTest-LambdaTestSampleApp");
-		$desired_capabilities->setCapability('network', true);
-		$desired_capabilities->setCapability('visual', true);
-		$desired_capabilities->setCapability('screenshot', true);
- 		$desired_capabilities->setCapability('console', true);		
+		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_ACCESS_KEY'] ."@hub.lambdatest.com/wd/hub";
+        
+        $capabilities = array(
+		"build" => "Sample PHPUnit Build",
+		"name" => "Sample PHPUnit Test",
+		"platform" => $osName,
+		"browserName" => $bName,
+		"version" => $VName
+     );	
 		
-		self::$driver = RemoteWebDriver::create($url, $desired_capabilities); 		
+		self::$driver = RemoteWebDriver::create($url, $capabilities); 		
 		
        }	
-
-
 
 	public function additionProvider()
 	    {
 		return [
-		    ['chrome', '61.0', 'WIN10'],
-                    ['firefox', '56.0', 'WIN7'],
-		    ['Chrome', '56.0', 'macOS High Sierra'],
-		    ['MicrosoftEdge', '18.0', 'Windows 10'],
+		    ['Chrome', 'latest', 'Windows 10'],
+            ['Firefox', 'latest-2', 'Windows 7'],
+		    ['Chrome', 'latest-1', 'macOS High Sierra'],
+		    ['MicrosoftEdge', 'latest', 'Windows 10'],
 		];
 	    }
 
@@ -78,7 +76,7 @@ public function setupLambdatest($bName, $VName, $osName)
 		}
 	}
 
-	public static function tearDownAfterClass(){		
+	public function tearDown(){		
 		self::$driver->quit();
 		}
 

@@ -1,42 +1,33 @@
 <?php
 
-require 'vendor/autoload.php';
 require 'lib/globals.php';
+require_once('vendor/autoload.php');
 
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Facebook\WebDriver\WebDriverBy;
+use PHPUnit\Framework\Assert;
 
 class LambdaTestSetup extends PHPUnit\Framework\TestCase{
     protected static $driver;
 
-    public static function setUpBeforeClass()
+    public function setUp()
     {        
         
-		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_APPKEY'] ."@hub.lambdatest.com/wd/hub";
-		$task_id = 0; 
-                $CONFIG = $GLOBALS['CONFIG'];
+		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_ACCESS_KEY'] ."@hub.lambdatest.com/wd/hub";
 
-                foreach ($CONFIG["capabilities"] as $key => $value) {
-                 if(!array_key_exists($key, $caps))
-			{
-		          $caps[$key] = $value;
-			  print($caps[$key]);
-			  print($value);
-			}
-               }    
-
-		$desired_capabilities = new DesiredCapabilities();
-		$desired_capabilities->setCapability('browserName',$GLOBALS['LT_BROWSER']);
-		$desired_capabilities->setCapability('version', $GLOBALS['LT_BROWSER_VERSION']);
-		$desired_capabilities->setCapability('platform', $GLOBALS['LT_OPERATING_SYSTEM']);
-		$desired_capabilities->setCapability('name', "PHPUnitTestSample");
-		$desired_capabilities->setCapability('build', "LambdaTestSampleApp");
-		$desired_capabilities->setCapability('network', true);
-		$desired_capabilities->setCapability('visual', true);		
+	$capabilities = array(
+		"build" => "Sample PHPUnit Build",
+		"name" => "Sample PHPUnit Test",
+		"platform" => "Windows 10",
+		"browserName" => "Chrome",
+		"version" => "latest"
+     );	
 		
-		self::$driver = RemoteWebDriver::create($url, $caps); 		
+		self::$driver = RemoteWebDriver::create($url, $capabilities); 		
 		
     }
 	
-	public static function tearDownAfterClass(){
+	public  function tearDown(){
 		self::$driver->quit();
 	}
 }
