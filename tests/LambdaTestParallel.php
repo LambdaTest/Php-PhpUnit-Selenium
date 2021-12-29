@@ -18,7 +18,7 @@ public function setupLambdatest($bName, $VName, $osName)
         
         $capabilities = array(
 		"build" => "Sample PHPUnit Build",
-		"name" => "Sample PHPUnit Test",
+		"name" => $bName."-".$VName."-".$osName,
 		"platform" => $osName,
 		"browserName" => $bName,
 		"version" => $VName
@@ -76,7 +76,7 @@ public function setupLambdatest($bName, $VName, $osName)
 		}
 	}
 
-	public function tearDown(){		
+	public function tearDown(): void{		
 		self::$driver->quit();
 		}
 

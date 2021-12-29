@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 class LambdaTestSetup extends PHPUnit\Framework\TestCase{
     protected static $driver;
 
-    public function setUp()
+    public function setUp(): void
     {        
         
 		$url = "https://". $GLOBALS['LT_USERNAME'] .":" . $GLOBALS['LT_ACCESS_KEY'] ."@hub.lambdatest.com/wd/hub";
@@ -27,7 +27,7 @@ class LambdaTestSetup extends PHPUnit\Framework\TestCase{
 		
     }
 	
-	public  function tearDown(){
+	public  function tearDown(): void{
 		self::$driver->quit();
 	}
 }

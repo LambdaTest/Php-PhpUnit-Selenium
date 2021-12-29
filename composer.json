@@ -1,6 +1,6 @@
 {
   "require": {
-    "phpunit/phpunit-selenium": "^7.0.0",
+    "phpunit/phpunit-selenium": "^8.0.0",
     "php-webdriver/webdriver": "dev-main"
   },
   "scripts": {
