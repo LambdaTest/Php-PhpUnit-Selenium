@@ -1,58 +1,48 @@
 # Php PhpUnit Selenium Using LambdaTest
-![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
+![PhpUnit](https://opengraph.githubassets.com/b6219f1f8154bd48ac6fe0119ce1246f834c5072e5a67754fc7d50923740403e/LambdaTest/Php-PhpUnit-Selenium)
 ---
 
-### Environment Setup
-
-1. Global Dependencies   
-   
-  -Windows
+### Prerequisites
+1. Install Php and setup environment variables.
+-Windows
   * You can download PHP for Windows from http://windows.php.net/download/
   * Run the installer and follow the setup wizard to install PHP.
   * Make sure you can use PHP with your command line: http://php.net/manual/en/install.windows.php
-
  -Linux
   * sudo apt-get install curl libcurl3 libcurl3-dev php
-
  -Mac
   * PHP should already be present on Mac OS X by default
-   
-2. Lambdatest Credentials
-    * Set LambdaTest username and access key in environment variables. It can be obtained from [LambdaTest dashboard](https://automation.lambdatest.com/)    
-    example:
-    - For Linux/Mac
-    ```
-    export LT_USERNAME="YOUR_USERNAME"
-    export LT_ACCESS_KEY="YOUR ACCESS KEY"
-    ```
-    - For Windows
-    ```
-    set LT_USERNAME="YOUR_USERNAME"
-    set LT_ACCESS_KEY="YOUR ACCESS KEY"
-    ```
-3. Setup
-     * install php in your machine and setup environment variable
-     * clone repository from link https://github.com/LambdaTest/Php-PhpUnit-Selenium.git
-     * install composer by running below command
+2) Install Composer ([Linux/MacOS](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos), [Windows](https://getcomposer.org/doc/00-intro.md#installation-windows))
+3) Install MBstring extension.  
 
-      ```
-      $ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-      $ php -r "if (hash_file('SHA384', 'composer-setup.php') ===       '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-      $ php composer-setup.php
-      $ php -r "unlink('composer-setup.php');"
-      ```
-    * Set LT user and appkey on lib/globals.php or setup in environment variable
-    * Navigate to the cloned directory
-    * run command to install composer ``` composer install ```
-    
-4. Running Tests
-    * To Start Test:
-    - Navigate to Php-PhpUnit-Selenium
-    - Run following command
-    * Execution
-    ```
-    $ composer test
-    ```
+### Run your First Test
+1. Clone the Php-PhpUnit-Selenium repository. 
+```
+git clone https://github.com/LambdaTest/Php-PhpUnit-Selenium.git
+```
+2. Next get into Php-PhpUnit-Selenium folder, and import Lamabdatest Credentials. You can get these from lambdatest automation dashboard.
+   <p align="center">
+   <b>For Linux/macOS:</b>:
+ 
+```
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR ACCESS KEY"
+```
+<p align="center">
+   <b>For Windows:</b>
+
+```
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR ACCESS KEY"
+```
+Step 3. Install dependencies by composer.
+```
+composer install 
+```
+Step 4. To run a single test, run
+``` 
+composer test
+```
 
 #####  Routing traffic through your local machine
 - Set tunnel value to `true` in test capabilities
