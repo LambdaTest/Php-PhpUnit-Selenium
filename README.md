@@ -53,6 +53,8 @@ Before you begin automation testing with Selenium and PHPUnit, you would need to
 
 * Download **composer** in the project directory ([Linux/MacOS](https://getcomposer.org/download/), [Windows](https://getcomposer.org/doc/00-intro.md#installation-windows)).
 
+* Make sure that you have latest **Composer** installed in in your system.
+
 **Note:** To use the **composer** command directly, it either should have been downloaded in the project directory or should be accessible globally which can be done by the command below:
 
   ```bash
