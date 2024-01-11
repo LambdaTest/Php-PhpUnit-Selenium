@@ -1,14 +1,18 @@
 {
   "require": {
-    "phpunit/phpunit-selenium": "^8.0.0",
-    "php-webdriver/webdriver": "dev-main"
+    "phpunit/phpunit-selenium": "^9.0.1",
+    "php-webdriver/webdriver": "^1.15",
+    "symfony/yaml": "*",
+    "ext-zip": "*"
   },
   "scripts": {
     "test": "composer single  && composer parallel",
-    "single": "vendor/bin/phpunit tests/LambdaTest.php", 
+    "single": "vendor/bin/phpunit tests/LambdaTest.php",
     "parallel": "vendor/bin/phpunit tests/LambdaTestParallel.php"
   },
   "autoload": {
-    "classmap": ["lib/"]
+    "classmap": [
+      "lib/"
+    ]
   }
 }
