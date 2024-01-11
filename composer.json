@@ -1,9 +1,7 @@
 {
   "require": {
     "phpunit/phpunit-selenium": "^9.0.1",
-    "php-webdriver/webdriver": "^1.15",
-    "symfony/yaml": "*",
-    "ext-zip": "*"
+    "php-webdriver/webdriver": "^1.15.1"
   },
   "scripts": {
     "test": "composer single  && composer parallel",
