@@ -12,5 +12,10 @@
     "classmap": [
       "lib/"
     ]
+  },
+  "config": {
+    "platform": {
+      "php": "8.3.1"
+    }
   }
 }
