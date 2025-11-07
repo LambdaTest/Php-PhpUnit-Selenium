@@ -61,10 +61,10 @@ public function setupLambdatest($bName, $VName, $osName)
 			$element4->click();
 			
 			self::$driver->wait(10, 500)->until(function($driver) {
-		   	$elements = $driver->findElements(WebDriverBy::cssSelector("[class='list-unstyled'] li:nth-child(6) span"));
+		   	$elements = $driver->findElements(WebDriverBy::cssSelector("li:nth-child(6) span"));
 		   	return count($elements) > 0;
 			});
-			$element5 = self::$driver->findElement(WebDriverBy::cssSelector("[class='list-unstyled'] li:nth-child(6) span"));
+			$element5 = self::$driver->findElement(WebDriverBy::cssSelector("li:nth-child(6) span"));
 			$this->assertEquals($itemName, $element5->getText());
 			self::$driver->executeScript("lambda-status=passed");	
        		}
