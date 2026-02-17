@@ -31,9 +31,9 @@ public function setupLambdatest($bName, $VName, $osName)
 	public function additionProvider()
 	    {
 		return [
-		    ['Chrome', 'latest', 'Windows 10'],
-            ['Firefox', 'latest-2', 'Windows 7'],
-		    ['Chrome', 'latest-1', 'macOS High Sierra'],
+		    ['Chrome', 'latest', 'Windows 11'],
+            ['Firefox', 'latest-2', 'Windows 8.1'],
+		    ['Chrome', 'latest-1', 'macOS Sonoma'],
 		    ['MicrosoftEdge', 'latest', 'Windows 10'],
 		];
 	    }
