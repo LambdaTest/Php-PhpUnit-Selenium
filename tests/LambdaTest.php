@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 	public function testAdd() {
 	try{		
 		$itemName = 'Yey, Lets add it to list';
-		self::$driver->get("https://lambdatest.github.io/sample-todo-app/");
+		self::$driver->get("https://www.testmuai.com/selenium-playground/todo-app/");
 		$element1 = self::$driver->findElement(WebDriverBy::name("li1"));
 		$element1->click();
 			
